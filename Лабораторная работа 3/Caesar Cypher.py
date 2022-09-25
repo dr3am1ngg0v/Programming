@@ -53,7 +53,6 @@ def main():
                 result += i
         
         os.system('cls')
-        print(len(alphabet_RU), alphabet_RU.find(i))
         print("Шифрованное сообщение: ", result.lower().capitalize())
         choice_def()
                 
