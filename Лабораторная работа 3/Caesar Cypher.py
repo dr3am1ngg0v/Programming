@@ -1,5 +1,6 @@
 # Работа выполнена студентом УрФУ Фт-210007 Митрофановым Иваном.
 # Данный код представляет собой шифратор сообщений методом шифра Цезаря.
+# В данном коде существует один недочёт, который описан в README.md на GitHub. Прошу с ним ознакомиться.
 
 
 import os
@@ -27,25 +28,17 @@ def main():
     
     message = input("Введите сообщение для шифровки: ").upper()          # Команда для ввода сообщения и его последующего преобразования в верхний регистр
     
-    step = 3                                                            # Шаг смещения
+    step = int(input("Укажите шаг смещения: "))                                                            # Шаг смещения
     result = ''
     
     language = input("Укажите язык сообщения (RU или EN): ")              # Выбор языка сообщения
 
     if language == 'RU' or language == 'ru':
-        
-        for i in message:                                               # Алгоритм шифрования на русском языке
-            
+                                     # Алгоритм шифрования на русском языке
+        for i in message:
+                      
             placement = alphabet_RU.find(i)
-            if alphabet_RU.find(i) == len(alphabet_RU) - 3 or alphabet_RU.find(i) == len(alphabet_RU) - 2 or alphabet_RU.find(i) == len(alphabet_RU) - 1: 
-                                                                                                    # Проверка, присутствуют ли три последних знака (7, 8, 9) алфавита в сообщении
-                                                                                                    # Если да, то 7 станет 1, 8 станет 2, а 9 станет 3, то есть цифры будут идти в повтор (не знаю честно, как это объяснить :D)
-                                                                                                    # Проверка идет по количеству символов в алфавите
-                placement = alphabet_RU.find(i) - 9 
-                new_placement = placement + step
-            else:
-                placement = alphabet_RU.find(i)
-                new_placement = placement + step
+            new_placement = placement + step
                 
             if i in alphabet_RU:
                 result += alphabet_RU[new_placement]
@@ -53,7 +46,7 @@ def main():
                 result += i
         
         os.system('cls')
-        print("Шифрованное сообщение: ", result.lower().capitalize())
+        print("Шифрованное сообщение: ", result.capitalize())
         choice_def()
                 
     
@@ -62,16 +55,9 @@ def main():
         if language == 'EN' or language == 'en':
             
             for i in message:                                               # Алгоритм шифрования на английском языке
-                
+            
                 placement = alphabet_EN.find(i)
-                
-                if alphabet_EN.find(i) == len(alphabet_EN) - 3 or alphabet_EN.find(i) == len(alphabet_EN) - 2 or alphabet_EN.find(i) == len(alphabet_EN) - 1: # Проверка, присутствуют ли три последних знака (7, 8, 9) алфавита в сообщении
-                                                                                                    
-                    placement = alphabet_EN.find(i) - 9
-                    new_placement = placement + step
-                else:
-                    placement = alphabet_EN.find(i)
-                    new_placement = placement + step
+                new_placement = placement + step
                 
                 if i in alphabet_EN:
                     result += alphabet_EN[new_placement]
@@ -79,10 +65,11 @@ def main():
                     result += i
             
             os.system('cls')
-            print("Шифрованное сообщение: ", result.lower().capitalize())
+            print("Шифрованное сообщение: ", result.capitalize())
             choice_def()
             
         else:
+            os.system('cls')
             print('Возникла ошибка при выборе языка!')
             main()
             
