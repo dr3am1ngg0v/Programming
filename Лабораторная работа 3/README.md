@@ -24,6 +24,8 @@
 
 Для запуска программа требуется открыть файл Caesar Cypher.py в любом IDE и просто скопилировать (например, в Visual Studio Code для этого необходимо применить сочетание клавиш Ctrl+F5).
 
+## Ниже примеры приведены при указании шага смещения 3!
+
 ## Пример ввода числа "Шла Саша по шоссе":
 
 ![Alt-текст](https://sun9-north.userapi.com/sun9-81/s/v1/ig2/QKoZ897pQiTXge9rwIe3uQvN7uDRL926rU8DMmLxBavzU9Vdvtuikf1-eLGZqBtEUURbJYkDKm6eACJEgWZ8UlS3.jpg?size=403x57&quality=96&type=album)
