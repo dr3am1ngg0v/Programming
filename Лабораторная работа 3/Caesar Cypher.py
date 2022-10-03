@@ -6,7 +6,7 @@
 import os
 os.system('cls')
 
-alphabet_RU = 'АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюя0123456789'                   # Алфавит русского языка с цифрами
+alphabet_RU = 'АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюя1234567890'                   # Алфавит русского языка с цифрами
 alphabet_EN = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890'                          # Алфавит английского языка с цифрами
 
 def choice_def():
@@ -41,7 +41,7 @@ def main():
             new_placement = placement + step
                 
             if i in alphabet_RU:
-                result += alphabet_RU[new_placement]
+                result += alphabet_RU[new_placement % len(alphabet_RU)]
             else:
                 result += i
         
@@ -60,7 +60,7 @@ def main():
                 new_placement = placement + step
                 
                 if i in alphabet_EN:
-                    result += alphabet_EN[new_placement]
+                    result += alphabet_EN[new_placement % len(alphabet_EN)]
                 else:
                     result += i
             
